@@ -89,9 +89,7 @@ const Publications = () => {
   const filteredPublications = publications.filter(pub => {
     const matchesSearch = pub.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          pub.authors.some(author => author.toLowerCase().includes(searchTerm.toLowerCase())) ||
-                         pub.tags.some(tag => tag.toLowerCase().includes(searchT
-
-erm.toLowerCase()));
+                         pub.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesCategory = filter === 'all' || pub.category === filter;
     return matchesSearch && matchesCategory;
   });
@@ -186,7 +184,7 @@ erm.toLowerCase()));
               return (
                 <div
                   key={publication.id}
-                  className="bg-gradient-to-br from-accent-500/10 to-primary-500/10 backdrop-blur-sm border border-accent-500/60 rounded-xl p-8 hover:border-accent-500/80 transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-br from-accent-500/10 to-primary-500/10 backdrop-blur-sm border border-accent-500/60 rounded-xl p-8 hover:border-accent-500/80 transition-all duration-300"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium bg-${categoryColor}-500/20 text-${categoryColor}-400 border border-${categoryColor}-500/30`}>
@@ -232,7 +230,7 @@ erm.toLowerCase()));
                   </div>
 
                   <div className="flex space-x-3">
-                    <button className="flex-1 bg-accent-500/20 hover:bg-accent-500/40 text-accent-400 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-2 border border-accent-500/30">
+                    <button className="flex-1 bg-accent-500/20 hover:bg-accent-500/40 text-accent-400 py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
                       <Download className="w-4 h-4" />
                       <span>Download</span>
                     </button>
@@ -313,7 +311,7 @@ erm.toLowerCase()));
                   </div>
 
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-primary-500/20 hover:bg-primary-500/40 text-primary-400 py-2 px-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center space-x-1 text-sm border border-primary-500/30">
+                    <button className="flex-1 bg-primary-500/20 hover:bg-primary-500/40 text-primary-400 py-2 px-3 rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
                       <Download className="w-4 h-4" />
                       <span>Download</span>
                     </button>
